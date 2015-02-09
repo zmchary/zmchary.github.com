@@ -1,85 +1,220 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Oldmu&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
-    <meta name="author" content="Mu Chen">
-  
-  
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Oldmu's Blog">
-<meta property="og:url" content="http://oldmoon.me/">
-<meta property="og:site_name" content="Oldmu's Blog">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oldmu's Blog">
-<meta name="twitter:description">
 
-  
-    <link rel="alternate" href="/atom.xml" title="Oldmu&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.2.1"/>
+
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.2.1" />
+
+
+
+  <title> Oldmu's Blog </title>
 </head>
 
 <body>
-  <div class="wrapper">
-    <header id="header">
-  <div class="title">
-    <h1><a href="/">Oldmu&#39;s Blog</a></h1>
-    <p><a href="/"></a></p>
+  <div class="container one-column ">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+    <a href="/" class="brand">
+        <span class="logo">
+          <i class="icon-logo"></i>
+        </span>
+        <span class="site-title">Oldmu's Blog</span>
+    </a>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          Home
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          Archives
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          Tags
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/02/09/Mac-下配置-LaTeX/">
+                Mac 下配置 LaTeX
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+          <span class="post-time">
+            
+              Posted on 2015-02-09
+            
+          </span>
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>本文主要是一劳永逸的解决 ctex 宏包在 Mac 上的默认字体配置, 下次再琢磨下怎样扩展到 xeCJK 宏包.</p>
+<p>打开终端, 键入以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/local/texlive/texmf-local/tex/latex/</div><div class="line"><span class="built_in">sudo</span> mkdir ./ctex/</div><div class="line"><span class="built_in">sudo</span> mkdir ./ctex/cfg/</div><div class="line"><span class="built_in">cd</span> ./ctex/cfg/</div><div class="line"><span class="built_in">sudo</span> vim ctexopts.cfg</div></pre></td></tr></table></figure>
+
+<p>复制以下内容：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="command">\ExecuteOptions</span><span class="special">{</span>UTF8<span class="special">}</span></div><div class="line"><span class="command">\ExecuteOptions</span><span class="special">{</span>nofonts<span class="special">}</span></div><div class="line"></div><div class="line"><span class="command">\endinput</span></div></pre></td></tr></table></figure>
+
+<p>保存退出, 编辑 <code>ctex.cfg</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> vim ctex.cfg</div></pre></td></tr></table></figure>
+
+<p>复制我的字体配置文件</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%==================== 设置英文字体 ====================%</span></div><div class="line"><span class="command">\setmainfont</span><span class="special">[</span>Ligatures=TeX<span class="special">]</span><span class="special">{</span>Minion Pro<span class="special">}</span><span class="comment">%--------------------英文衬线字体</span></div><div class="line"><span class="command">\setsansfont</span><span class="special">[</span>Ligatures=TeX<span class="special">]</span><span class="special">{</span>Myriad Pro<span class="special">}</span><span class="comment">%------------------------英文无衬线字体</span></div><div class="line"><span class="command">\setmonofont</span><span class="special">[</span>Ligatures=TeX<span class="special">]</span><span class="special">{</span>Adobe Garamond Pro<span class="special">}</span><span class="comment">%-------------------------英文等宽字体</span></div><div class="line"><span class="comment">%==================== 中文字体设置 ====================%</span></div><div class="line"><span class="command">\setCJKmainfont</span><span class="special">[</span>ItalicFont=STKaiti,</div><div class="line">		BoldFont=Hiragino Sans GB W6,</div><div class="line">		Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>FZJPSSJW--GB1-0<span class="special">}</span><span class="comment">%-----正文罗马族的CJK字体</span></div><div class="line"><span class="command">\setCJKsansfont</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>Hiragino Sans GB W6<span class="special">}</span><span class="comment">%-----正文无衬线字体</span></div><div class="line"><span class="command">\setCJKmonofont</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>STFangsong<span class="special">}</span><span class="comment">%-----等宽字体</span></div><div class="line"><span class="comment">%=================== 其他中文字体设置 ==================%</span></div><div class="line"><span class="comment">%%方正苏新诗柳楷简体</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhnkai<span class="special">]</span><span class="command">\newkaiti</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>FZSXSLKJW--GB1-0<span class="special">}</span></div><div class="line"><span class="comment">%%方正精品书宋简体</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhsong<span class="special">]</span><span class="command">\songti</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>FZJPSSJW--GB1-0<span class="special">}</span></div><div class="line"><span class="comment">%%方正兰亭刊黑</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhhei<span class="special">]</span><span class="command">\heiti</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>FZLTKHK--GBK1-0<span class="special">}</span>   </div><div class="line"><span class="comment">%最好使用 \bf   or \textbf</span></div><div class="line"><span class="comment">%%</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhkai<span class="special">]</span><span class="command">\kaiti</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>STKaiti<span class="special">}</span></div><div class="line"><span class="comment">%%</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhfs<span class="special">]</span><span class="command">\fangsong</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>STFangsong<span class="special">}</span></div><div class="line"><span class="comment">%%方正启体简体</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>zhqg<span class="special">]</span><span class="command">\qigong</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>FZQTJW--GB1-0<span class="special">}</span></div><div class="line"><span class="comment">%%</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>dqchei<span class="special">]</span><span class="command">\dqhc</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>Hiragino Sans GB W6<span class="special">}</span></div><div class="line"><span class="comment">%%</span></div><div class="line"><span class="command">\newCJKfontfamily</span><span class="special">[</span>dqxhei<span class="special">]</span><span class="command">\dqhx</span><span class="special">[</span>Mapping=fullwidth-stop<span class="special">]</span><span class="special">{</span>Hiragino Sans GB W3<span class="special">}</span></div><div class="line"><span class="comment">%%%==========================================================%%</span></div><div class="line"><span class="comment">%%FZJPSSJW--GB1-0        %%方正精品书宋简体</span></div><div class="line"><span class="comment">%%FZLTKHK--GBK1-0        %%方正兰亭刊黑</span></div><div class="line"><span class="comment">%%FZSXSLKJW--GB1-0       %%方正苏新诗柳楷简体</span></div><div class="line"><span class="comment">%%FZZDXJW--GB1-0         %%方正中等线简体</span></div><div class="line"><span class="comment">%%HiraginoSansGB-W6</span></div><div class="line"><span class="comment">%%FZCHSJW--GB1-0         %%方正粗黑宋简体</span></div><div class="line"><span class="comment">%%FZDHTJW--GB1-0         %%方正大黑</span></div><div class="line"><span class="comment">%%FZQTJW--GB1-0          %%方正启体简体</span></div><div class="line"><span class="comment">%%%==========================================================%%</span></div><div class="line"><span class="comment">%%字体查找：fc-list -f "%{family}\n" :lang=zh</span></div></pre></td></tr></table></figure>
+
+
+
+
+
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Mac/">
+                #Mac
+              </a>
+            
+              <a href="/tags/LaTeX/">
+                #LaTeX
+              </a>
+            
+              <a href="/tags/字体/">
+                #字体
+              </a>
+            
+              <a href="/tags/ctex/">
+                #ctex
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+          <div class="post-eof the-shape"></div>
+        
+      </div>
+    
   </div>
-  <nav class="nav">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-      
-        <li><a href="/atom.xml">RSS</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
-  <div class="clearfix"></div>
-</header>
-    <div class="content">
-
-
 
 
   
-    <article class="post">
-  <header>
     
-      <div class="icon"></div>
-      <a href="/2015/01/17/hello-world/">
-  <time datetime="2015-01-17T07:13:55.000Z">
-    1月 17 2015
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2015/01/17/hello-world/">Hello World</a></h1>
-  
 
-  </header>
-  
-  <div class="entry">
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/01/17/hello-world/">
+                Hello World
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+          <span class="post-time">
+            
+              Posted on 2015-01-17
+            
+          </span>
+        
+      </div>
+    </div>
+
     
-      <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick_Start">Quick Start</h2>
 <h3 id="Create_a_new_post">Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -98,39 +233,63 @@
 
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+          <div class="post-eof the-shape"></div>
+        
+      </div>
     
   </div>
-  <footer class="end-sep">
+
+
+  
     
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
       
       
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/17/2012-03-04-my-tech-blogging-like-a-hacker/">
+                像黑客一样写自己的技术博客
+              </a>
+            
+          
+        </h1>
+      
 
+      <div class="post-meta">
+          <span class="post-time">
+            
+              Posted on 2013-11-17
+            
+          </span>
+        
+      </div>
+    </div>
 
-  
-    <article class="post">
-  <header>
     
-      <div class="icon"></div>
-      <a href="/2013/11/17/2012-03-04-my-tech-blogging-like-a-hacker/">
-  <time datetime="2013-11-17T11:43:20.000Z">
-    11月 17 2013
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/17/2012-03-04-my-tech-blogging-like-a-hacker/">像黑客一样写自己的技术博客</a></h1>
-  
+      <div class="post-body">
 
-  </header>
-  
-  <div class="entry">
-    
-      <p>说实话，我发现自己的确是个形式主义者，工具癖，规划控……就是不想静下来仔细思考认真沉淀最后生产出点有质量的内容，而且从小就是（我曾多次准备好一个练习本规划好用来如何写组词造句等，但第一页都没写完过）。再加上重度的拖延症，偶尔稍微纠结下，曾经写点技术积累的想法就彻底夭折了。</p>
+        
+        
+
+        
+          <p>说实话，我发现自己的确是个形式主义者，工具癖，规划控……就是不想静下来仔细思考认真沉淀最后生产出点有质量的内容，而且从小就是（我曾多次准备好一个练习本规划好用来如何写组词造句等，但第一页都没写完过）。再加上重度的拖延症，偶尔稍微纠结下，曾经写点技术积累的想法就彻底夭折了。</p>
 <p>但在用了<a href="https://github.com/" target="_blank" rel="external">GitHub</a>这么一段时间后，对<a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>语法和<a href="https://github.com/mojombo/jekyll" target="_blank" rel="external">jekyll</a>建站托管的迷恋一发不可收拾，基本上达到了手里拿着一把榔头就准备到处去敲钉子的地步。于是琢磨着用这些东西再次开个博客稍微的积累点技术方面东西，自然的，也是对<a href="http://wordpress.org/" target="_blank" rel="external">WordPress</a>时代的一个告别：</p>
 <ul>
 <li>其实我不想维护数据库</li>
@@ -157,54 +316,77 @@
 <p>感谢这个有云的时代！可以让我们通过一件件简单的工具打造属于每个程序员自己的站点，<a href="http://kyle.xlau.org/posts/blogging-like-a-hacker.html" target="_blank" rel="external">像黑客一样写博客</a>（原文：<a href="http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html" target="_blank" rel="external">Blogging Like a Hacker</a>）。于是我可以把精力只放在文章的内容上，这一定会更有效率。</p>
 <p>今后，我会在这里记录开发中遇到和解决的各种问题，与技术有关的思考，姑且就当做一个代码笔记本了。不过回到开始说的，不管形式如何，努力坚持产出才是王道。</p>
 
+        
+
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+          <div class="post-eof the-shape"></div>
+        
+      </div>
     
   </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
 
 
   
 
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
+          </div>
 
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Mu Chen</span>
 </div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT</a>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
   </div>
-  <footer id="footer"><div class="copyright">
+
+  <script type="text/javascript" src="/vendors/jquery/dist/jquery.min.js?v=0.2.1"></script>
+
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+
+
+
+
   
-  &copy; 2015 <a href="/">Mu Chen</a>
-  
-</div>
-<div class="theme-copyright">
-  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
-   | 
-  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script src="/js/scale.fix.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-  (function($){
-    $('.fancybox').fancybox();
-  })(jQuery);
-</script>
-
 </body>
 </html>
